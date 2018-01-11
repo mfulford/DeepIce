@@ -10,7 +10,6 @@ from keras.layers import Concatenate, Dot
 
     # Example
     angles = Layer_Angles(input_shape=(30,))(inputTensor)
-
 """
 
 class Layer_Angles(Layer):
