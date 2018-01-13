@@ -1,4 +1,8 @@
 # DeepIce
+
+![Alt text](deepIce.png?raw=true "DeepIce Diagram")
+
+
 ## Deep Neural Networks for identifying the phase of molecules
 
 4 main networks: 
