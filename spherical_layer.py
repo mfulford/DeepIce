@@ -14,19 +14,20 @@ from keras.layers import Concatenate, Lambda, Dot
 
 class Layer_Y(Layer):
 
-    def __init__(self, spherical_ID=3, **kwargs):
+    def __init__(self, num_neighbours, spherical_ID=3, **kwargs):
         self.Y2 = False
         self.Y3 = False
         self.Y4 = False
+        self.num_neighbours = num_neighbours
         if spherical_ID == 2:
             self.Y2 = True
-            self.output_dim = 50
+            self.output_dim = 5*self.num_neighbours
         elif spherical_ID == 3:
             self.Y3 = True
-            self.output_dim = 70
+            self.output_dim = 7*self.num_neighbours
         elif spherical_ID == 4:
             self.Y4 = True
-            self.output_dim = 90
+            self.output_dim = 9*self.num_neighbours
 
         super(Layer_Y, self).__init__(**kwargs)
 
@@ -46,7 +47,7 @@ class Layer_Y(Layer):
                 y4[i] = {}
             y4_all = {}
 
-        for i in range(1, 11):
+        for i in range(1, self.num_neighbours+1):
             id_start = (i - 1) * 3
             id_end = id_start + 3
 
@@ -127,16 +128,13 @@ class Layer_Y(Layer):
 
 
         if self.Y2:
-            ConcatY2 = Concatenate()([y2_all[1], y2_all[2], y2_all[3], y2_all[4], y2_all[5],
-                                  y2_all[6], y2_all[7], y2_all[8], y2_all[9],y2_all[10]])
+            ConcatY2 = Concatenate()([*y2_all.values()])
             return ConcatY2
         elif self.Y3:
-            ConcatY3 = Concatenate()([y3_all[1], y3_all[2], y3_all[3], y3_all[4], y3_all[5],
-                                  y3_all[6], y3_all[7], y3_all[8], y3_all[9],y3_all[10]])
+            ConcatY3 = Concatenate()([*y3_all.values()])
             return ConcatY3
         elif self.Y4:
-            ConcatY4 = Concatenate()([y4_all[1], y4_all[2], y4_all[3], y4_all[4], y4_all[5],
-                                  y4_all[6], y4_all[7], y4_all[8], y4_all[9],y4_all[10]])
+            ConcatY4 = Concatenate()([*y4_all.values()])
             return ConcatY4
 
 

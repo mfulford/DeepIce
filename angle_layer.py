@@ -10,17 +10,19 @@ from keras.layers import Concatenate, Dot
 
     # Example
     angles = Layer_Angles(input_shape=(30,))(inputTensor)
+
 """
 
 class Layer_Angles(Layer):
 
-    def __init__(self, **kwargs):
-        self.output_dim = 30
+    def __init__(self, nearest_neigbours, **kwargs):
+        self.nearest_neigbours = nearest_neigbours
+        self.output_dim = nearest_neigbours *3
         super(Layer_Angles, self).__init__(**kwargs)
 
     def call(self, inputTensor):
-        Cat_angles = {}
-        for i in range(1, 11):
+        Cat_angles = []
+        for i in range(1, self.nearest_neigbours+1):
             id_start = (i - 1) * 3 #9
             id_end = id_start + 3
 
@@ -37,10 +39,9 @@ class Layer_Angles(Layer):
             theta = K.tf.acos(K.tf.divide(z_square, r2))
             Phi = K.tf.atan(K.tf.divide(y, x))
 
-            Cat_angles[i] = Concatenate()([r2, theta, Phi])
+            Cat_angles.append(Concatenate()([r2, theta, Phi]))
 
-        ConcatSpherical = Concatenate()([Cat_angles[1], Cat_angles[2], Cat_angles[3], Cat_angles[4], Cat_angles[5],
-                                         Cat_angles[6], Cat_angles[7], Cat_angles[8], Cat_angles[9], Cat_angles[10],])
+        ConcatSpherical = Concatenate()(Cat_angles)
         return ConcatSpherical
 
     def compute_output_shape(self, input_shape):
