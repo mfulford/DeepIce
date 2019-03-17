@@ -1,5 +1,10 @@
 # DeepIce
 
+![Alt text](deepIce_v2.png?raw=true "DeepIce Diagram")
+
+
+## Deep Neural Networks for identifying the phase of molecules
+
 ```
 @article{deepice,
    author = {Fulford, Maxwell and Salvalaglio, Matteo and Molteni, Carla},
@@ -8,10 +13,6 @@
    doi = {10.1021/acs.jcim.9b00005}}
 ```
 
-![Alt text](deepIce_v2.png?raw=true "DeepIce Diagram")
-
-
-## Deep Neural Networks for identifying the phase of molecules
 
 4 main networks: 
  - Spherical Harmonics Network
@@ -45,7 +46,9 @@ python main_deepIce.py --Evaluate --data_file 'data/deepice_testdata.npz' --near
 
 ##
 
+### Classification error DeepIce compared existing approaches 
+
+
 ![Alt text](deepIce_logError.png?raw=true "DeepIce Diagram")
 
-### Classification error DeepIce compared existing approaches 
 
