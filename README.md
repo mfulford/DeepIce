@@ -46,9 +46,5 @@ python main_deepIce.py --Evaluate --data_file 'data/deepice_testdata.npz' --near
 
 ##
 
-### Classification error DeepIce compared existing approaches 
-
-
+### Classification error DeepIce compared existing approaches:
 ![Alt text](deepIce_logError.png?raw=true "DeepIce Diagram")
-
-
