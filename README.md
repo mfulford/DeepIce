@@ -1,5 +1,13 @@
 # DeepIce
 
+```
+@article{deepice,
+   author = {Fulford, Maxwell and Salvalaglio, Matteo and Molteni, Carla},
+   title = {DeepIce: a Deep Neural Network Approach to Identify Ice and Water Molecules},
+   journal = {Journal of Chemical Information and Modeling},
+   doi = {10.1021/acs.jcim.9b00005}}
+```
+
 ![Alt text](deepIce_v2.png?raw=true "DeepIce Diagram")
 
 
@@ -35,13 +43,9 @@ Evaluating accuracy on data set:
 python main_deepIce.py --Evaluate --data_file 'data/deepice_testdata.npz' --nearest_neighbours 13
 ```
 
+##
 
-### Cite this work:
+![Alt text](deepIce_logError.png?raw=true "DeepIce Diagram")
 
-```
-@article{deepice,
-   author = {Fulford, Maxwell and Salvalaglio, Matteo and Molteni, Carla},
-   title = {DeepIce: a Deep Neural Network Approach to Identify Ice and Water Molecules},
-   journal = {Journal of Chemical Information and Modeling},
-   doi = {10.1021/acs.jcim.9b00005}}
-```
+### Classification error DeepIce compared existing approaches 
+
