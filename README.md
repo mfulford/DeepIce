@@ -1,6 +1,6 @@
 # DeepIce
 
-![Alt text](deepIce_v3.png?raw=true "DeepIce Diagram")
+![Alt text](figures/deepIce_v3.png?raw=true "DeepIce Diagram")
 
 
 ## Deep Neural Networks for identifying the phase of molecules
@@ -47,4 +47,4 @@ python main_deepIce.py --Evaluate --data_file 'data/deepice_testdata.npz' --near
 ##
 
 ### Classification error DeepIce compared with existing approaches:
-![Alt text](deepIce_logError.png?raw=true "DeepIce Diagram")
+![Alt text](figures/deepIce_logError.png?raw=true "DeepIce Diagram")
