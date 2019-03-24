@@ -1,6 +1,6 @@
 # DeepIce
 
-![Alt text](deepIce_v2.png?raw=true "DeepIce Diagram")
+![Alt text](deepIce_v3.png?raw=true "DeepIce Diagram")
 
 
 ## Deep Neural Networks for identifying the phase of molecules
