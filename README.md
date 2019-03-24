@@ -1,15 +1,19 @@
 <img src="figures/toc_deepIce.png" align="right" width="250" />
 
 # DeepIce
-### Deep Neural Networks for identifying the phase of molecules 
+#### Deep Neural Network for identifying the phase of molecules 
 
-##
 
-4 main networks: 
- - Spherical Harmonics Network
- - Fourier Transform Network
- - Catersian Coordinates Network
- - Spherical Coordinates Network 
+## Architecture of DeepIce: 
+
+Four sub-networks combined to produce a powerful predictor
+
+ - `Catersian Coordinates Network`
+  - `Spherical Coordinates Network`
+ - `Spherical Harmonics Network`
+ - `Fourier Transform Network`
+
+
 
 ![Alt text](figures/deepIce_v3.png?raw=true "DeepIce Diagram")
 
