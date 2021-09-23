@@ -31,7 +31,7 @@ Four sub-networks combined to produce a powerful predictor
  ### Usage:
  
  ```
- python main_deepice.py --help
+ python main_deepIce.py --help
 ```
 
 Training with 10 nearest neighbours, batch size of 30 and 5 epochs:
