@@ -197,6 +197,9 @@ class DeepIce():
 
         y_pred = self.model.predict(X)
         y_pred = np.argmax(y_pred, axis=-1)
+        print(type(num_mols))
+        num_mols = int(num_mols)
+        print(type(num_mols))        
         y_pred = np.reshape(y_pred, (-1, num_mols))
         np.savetxt(outputfile, y_pred, delimiter=",", fmt='%i')
 
